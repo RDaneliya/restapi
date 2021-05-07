@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: "EDCM-API"
+  data:
+    mongodb:
+      authentication-database: admin
+      uri: {$MONGO_LINK}
