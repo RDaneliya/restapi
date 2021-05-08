@@ -4,4 +4,4 @@ spring:
   data:
     mongodb:
       authentication-database: admin
-      uri: {$MONGO_LINK}
+      uri: ${MONGO_LINK}

@@ -1,4 +1,4 @@
-package com.edcm.restapi.api.stations;
+package com.edcm.restapi.api.items;
 
 import lombok.Data;
 

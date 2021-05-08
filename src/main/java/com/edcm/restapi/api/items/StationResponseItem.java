@@ -1,11 +1,11 @@
-package com.edcm.restapi.api.stations;
+package com.edcm.restapi.api.items;
 
 import lombok.Data;
 
 import java.time.Instant;
 
 @Data
-public class StationResponse {
+public class StationResponseItem {
     public String stationName;
 
     public String systemName;
