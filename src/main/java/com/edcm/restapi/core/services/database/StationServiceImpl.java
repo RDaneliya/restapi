@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
-public class DatabaseServiceImpl implements DatabaseService {
+public class StationServiceImpl implements StationService {
     private final StationRepository stationRepository;
     private final StationMapper stationMapper;
 
@@ -27,13 +27,6 @@ public class DatabaseServiceImpl implements DatabaseService {
     public StationSharedData findByStationName(String stationName) {
         StationEntity stationEntity = stationRepository.findByStationName(stationName);
         return toSharedData(stationEntity);
-    }
-
-    @Override
-    public List<StationSharedData> findCommodityMinBuyPrice(String commodityName, int limit) {
-        return stationRepository.findCommodityMinBuyPrice(commodityName, limit).stream()
-            .map(this::toSharedData)
-            .collect(Collectors.toList());
     }
 
     private StationSharedData toSharedData(StationEntity entity){

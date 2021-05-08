@@ -18,6 +18,10 @@ repositories {
     mavenCentral()
 }
 
+bootJar{
+    archiveFileName = 'edcm.jar'
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -31,8 +35,6 @@ dependencies {
     testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
 
     implementation group: 'org.springframework.integration', name: 'spring-integration-zeromq', version: '5.4.6'
-
-
 }
 
 test {
