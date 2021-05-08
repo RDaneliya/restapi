@@ -33,6 +33,4 @@ public class WishlistServiceImpl implements WishlistService {
     public void saveCommodity(WishlistCommodityEntity prototype) {
         repository.save(prototype);
     }
-
-
 }
