@@ -1,7 +1,7 @@
 package com.edcm.restapi.api.controllers;
 
 import com.edcm.restapi.api.requests.WishlistCommodityRequest;
-import com.edcm.restapi.api.responses.WishlistReponse;
+import com.edcm.restapi.api.responses.WishlistResponse;
 import com.edcm.restapi.core.extension.mappers.WishlistMapper;
 import com.edcm.restapi.core.services.database.WishlistService;
 import com.edcm.restapi.core.shared.data.WishlistItemSharedData;
@@ -19,9 +19,9 @@ public class WishlistController {
 
     @GetMapping("/wishlist/{commodityName}")
     @ResponseBody
-    public WishlistReponse getAllWishlistCommodities(@PathVariable String commodityName) {
+    public WishlistResponse getAllWishlistCommodities(@PathVariable String commodityName) {
         List<WishlistItemSharedData> responseItems = wishlistService.getWishistCommoditiesByName(commodityName);
-        return new WishlistReponse(responseItems);
+        return new WishlistResponse(responseItems);
     }
 
     @PostMapping("/wishlist/{commodityId}")
@@ -31,11 +31,11 @@ public class WishlistController {
 
     @PostMapping("/wishlist")
     public void createWishlistCommodity(@RequestBody WishlistCommodityRequest request) {
-        WishlistItemSharedData wishlitItem = new WishlistItemSharedData(
+        WishlistItemSharedData wishlistItemSharedData = new WishlistItemSharedData(
             request.buyPrice,
             request.sellPrice,
             request.name);
 
-        wishlistService.saveCommodity(mapper.toCommodtityEntity(wishlitItem));
+        wishlistService.saveCommodity(mapper.toCommodtityEntity(wishlistItemSharedData));
     }
 }

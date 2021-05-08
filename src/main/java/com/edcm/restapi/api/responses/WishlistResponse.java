@@ -8,6 +8,6 @@ import java.util.List;
 
 @AllArgsConstructor
 @Data
-public class WishlistReponse {
+public class WishlistResponse {
     List<WishlistItemSharedData> wishlist;
 }
